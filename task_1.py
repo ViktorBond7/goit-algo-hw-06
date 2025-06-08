@@ -2,16 +2,16 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 def build_graph():
-    # 1. Створюємо граф
+    # Створюємо граф
     metro_graph = nx.Graph()
 
-    # 2. Додаємо вершини (станції метро)
+    # Додаємо вершини (станції метро)
     stations = [
         "Центр", "Університет", "Площа Ринок", "Вокзал", "Парк", "Музей", "Театр", "Бібліотека"
     ]
     metro_graph.add_nodes_from(stations)
 
-    # 3. Додаємо ребра (лінії метро)
+    # Додаємо ребра (лінії метро)
     metro_graph.add_edges_from([
         ("Центр", "Університет", {"weight": 3}),
         ("Центр", "Площа Ринок", {"weight": 2}),
@@ -28,11 +28,11 @@ def build_graph():
     return metro_graph
 
 def print_graph(metro_graph):
-    # 5. Аналіз характеристик
+    # Аналіз характеристик
     print("Кількість вершин (станцій):", metro_graph.number_of_nodes())
     print("Кількість ребер (ліній):", metro_graph.number_of_edges())
 
-    # 6. Ступінь кожної вершини
+    # Ступінь кожної вершини
     print("\n Ступінь вершин:")
     for node, degree in metro_graph.degree():
         print(f"   {node}: {degree}")
